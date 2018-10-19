@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   constructor(private _marvelService: MarvelService) { }
 
   private heroes = [];
+  private data = <any>[];
 
   ngOnInit() {
     /* First, grab the endpoint from the service,
