@@ -6,11 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatCardModule, MatGridListModule } from '@angular/material';
 
+// Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { JoinAvengersComponent } from './join-avengers/join-avengers.component';
+
+// Routing
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,7 @@ import { JoinAvengersComponent } from './join-avengers/join-avengers.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    JoinAvengersComponent
+    routingComponents
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { JoinAvengersComponent } from './join-avengers/join-avengers.component';
     MatButtonModule,
     MatCheckboxModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
