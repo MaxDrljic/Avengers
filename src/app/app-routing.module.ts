@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { HomeComponent } from './home/home.component';
 import { JoinAvengersComponent } from './join-avengers/join-avengers.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'join-avengers', component: JoinAvengersComponent }
 ];
 
@@ -12,5 +15,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
 // Routing components should be declared here, instead of declaring in app.module.ts.
-export const routingComponents = [JoinAvengersComponent];
+export const routingComponents = [HomeComponent, JoinAvengersComponent, PageNotFoundComponent];

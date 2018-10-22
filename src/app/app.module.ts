@@ -21,7 +21,7 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    routingComponents
+    routingComponents,
   ],
   imports: [
     BrowserModule,
