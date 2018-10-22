@@ -4,9 +4,9 @@
 @import "~font-awesome/css/font-awesome.css";
 
 body {
-  background-image: url(assets/images/background.png);
-  background-size: contain;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
+  background: url(assets/images/background1.jpg) no-repeat center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
   -o-background-size: cover;
 }
