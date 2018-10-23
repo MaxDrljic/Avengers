@@ -18,11 +18,20 @@ export class AvengerDialogComponent implements OnInit {
   ];
 
   ngOnInit() {
+    this.service.getAvengers();
   }
 
   onClear() {
     this.service.form.reset();
     this.service.initializeFormGroup();
+  }
+
+  onSubmit() {
+    if (this.service.form.valid) {
+      this.service.insertAvenger(this.service.form.value);
+      this.service.form.reset();
+      this.service.initializeFormGroup();
+    }
   }
 
 }
