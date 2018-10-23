@@ -1,0 +1,44 @@
+<form [formGroup]="service.form" class="normal-form">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controls-container">
+        <input type="hidden" formControlName="$key">
+        <mat-form-field>
+          <input formControlName="name" matInput placeholder="Enter Name*">
+          <mat-error>This field is mandatory!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="description" matInput placeholder="Enter Description*">
+          <mat-error *ngIf="service.form.controls['description'].errors?.required">This field is mandatory!</mat-error>
+          <mat-error *ngIf="service.form.controls['description'].errors?.minLength">Minimum 10 characters needed!</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controls-container">
+        <div class="add-bottom-padding">
+          <mat-radio-group formControlName="gender">
+            <mat-radio-button value="1">Male</mat-radio-button>
+            <mat-radio-button value="2">Female</mat-radio-button>
+            <mat-radio-button value="3">Other</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <mat-form-field>
+          <mat-select formControlName="event" placeholder="Add Event">
+            <mat-option>None</mat-option>
+            <ng-container *ngFor="let event of events">
+              <mat-option value="{{event.id}}">{{event.value}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+        <div class="add-bottom-padding">
+          <mat-checkbox formControlName="isFavorite">Favorite Avenger</mat-checkbox>
+        </div>
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

@@ -6,7 +6,15 @@ export const environment = {
   production: false,
   PublicKey: 'e04d9602573a32a9a3497d998652813f',
   PrivateKey: '0da2dd398aacf77326a6afab5f9b06ff302533cb',
-  MarvelEndpoint: 'http://gateway.marvel.com/v1/public/characters?ts='
+  MarvelEndpoint: 'http://gateway.marvel.com/v1/public/characters?ts=',
+  firebaseConfig: {
+    apiKey: 'AIzaSyAoHIJ7yJ8m7f7bLxU702DFAZnuVH17F8I',
+    authDomain: 'avengers-bfb7b.firebaseapp.com',
+    databaseURL: 'https://avengers-bfb7b.firebaseio.com',
+    projectId: 'avengers-bfb7b',
+    storageBucket: 'avengers-bfb7b.appspot.com',
+    messagingSenderId: '695456421085'
+  }
 };
 
 /*
