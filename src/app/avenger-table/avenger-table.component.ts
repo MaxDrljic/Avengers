@@ -4,6 +4,7 @@ import { AvengerService } from '../shared/avenger.service';
 import { EventsService } from '../shared/events.service';
 
 import { MatTableDataSource, MatSort, MatPaginator, MatDialog, MatDialogConfig } from '@angular/material';
+import { NotificationService } from '../shared/notification.service';
 
 @Component({
   selector: 'app-avenger-table',
@@ -14,7 +15,8 @@ export class AvengerTableComponent implements OnInit {
 
   constructor(private service: AvengerService,
     private eventsService: EventsService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog,
+    private notificationService: NotificationService) { }
 
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = ['name', 'description', 'eventName', 'eventDescription', 'actions'];
@@ -72,6 +74,13 @@ export class AvengerTableComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.width = '60%';
     this.dialog.open(AvengerDialogComponent, dialogConfig);
+  }
+
+  onDelete($key) {
+    if (confirm('Are you sure about deleting this Avenger?')) {
+      this.service.deleteAvenger($key);
+      this.notificationService.warn('! Avenger Removed');
+    }
   }
 
 }
