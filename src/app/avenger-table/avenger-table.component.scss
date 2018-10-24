@@ -4,10 +4,10 @@
   display: none;
 }
 
-/* .table {
-  margin: 0 auto;
-  width: 60%;  
-} */
+.table {
+  margin-left: 15px;
+  width: 80%;  
+}
 
 mat-footer-row mat-footer-cell {
   justify-content: center;
@@ -16,7 +16,7 @@ mat-footer-row mat-footer-cell {
 
 /* Filter Controls */
 .search-div {
-  margin: 5px;
+  margin: 4px;
 }
 
 .search-form-field {
