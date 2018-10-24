@@ -25,9 +25,9 @@
         </div>
         <mat-form-field>
           <mat-select formControlName="event" placeholder="Add Event">
-            <mat-option>None</mat-option>
+            <!-- <mat-option>None</mat-option> -->
             <ng-container *ngFor="let event of eventsService.array">
-              <mat-option value="{{event.$key}}">{{event.name}}-{{event.item}}</mat-option>
+              <mat-option value="{{event.$key}}">{{event.name}} {{event.item}}</mat-option>
             </ng-container>
           </mat-select>
         </mat-form-field>

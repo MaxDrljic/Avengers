@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
+import * as _ from 'lodash';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,5 +25,23 @@ export class EventsService {
           };
         });
       });
+  }
+
+  // Grabbing the event name using lodash
+  getEventName($key) {
+    if ($key === '0') {
+      return '';
+    } else {
+      return _.find(this.array, (obj) => obj.$key === $key)['name'];
+    }
+  }
+
+  // Grab event description
+  getEventDescription($key) {
+    if ($key === '0') {
+      return '';
+    } else {
+      return _.find(this.array, (obj) => obj.$key === $key)['item'];
+    }
   }
 }

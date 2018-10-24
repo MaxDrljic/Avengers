@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AvengerService } from '../shared/avenger.service';
-import { MatTableDataSource } from '@angular/material';
+import { EventsService } from '../shared/events.service';
+
+import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 
 @Component({
   selector: 'app-avenger-table',
@@ -9,23 +11,54 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class AvengerTableComponent implements OnInit {
 
-  constructor(private service: AvengerService) { }
+  constructor(private service: AvengerService,
+    private eventsService: EventsService) { }
 
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['name'];
+  displayedColumns: string[] = ['name', 'description', 'eventName', 'eventDescription', 'actions'];
+  /* Decorators which are using MatSort & MatPaginator,
+    and implementing 'sort' and 'paginator'
+    on listData, shown on ngInit below! */
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  searchKey: string;
 
+  // When the component is initialized, retrieve key, all avengers, event name and push it to array
   ngOnInit() {
     this.service.getAvengers().subscribe(
       list => {
-        let array = list.map(item => {
+        const array = list.map(item => {
+          const eventName = this.eventsService.getEventName(item.payload.val()['event']);
+          const eventDescription = this.eventsService.getEventDescription(item.payload.val()['event']);
           return {
             $key: item.key,
+            eventName,
+            eventDescription,
             ...item.payload.val()
           };
         });
         this.listData = new MatTableDataSource(array);
+        this.listData.sort = this.sort;
+        this.listData.paginator = this.paginator;
+        // Restricts the search functionality only for the form, not the Firebase
+        this.listData.filterPredicate = (data, filter) => {
+          return this.displayedColumns.some(element => {
+            return element !== 'actions' && data[element].toLowerCase().indexOf(filter) !== -1;
+          });
+        };
       }
     );
+  }
+
+  // Clears the search & applies the filter
+  onSearchClear() {
+    this.searchKey = '';
+    this.applyFilter();
+  }
+
+  // Filters the word, removes whitespace and changes to lowercase
+  applyFilter() {
+    this.listData.filter = this.searchKey.trim().toLowerCase();
   }
 
 }

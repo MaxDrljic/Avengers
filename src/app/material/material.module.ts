@@ -18,6 +18,9 @@ import * as Material from '@angular/material';
     Material.MatCheckboxModule,
     Material.MatSnackBarModule,
     Material.MatTableModule,
+    Material.MatIconModule,
+    Material.MatPaginatorModule,
+    Material.MatSortModule,
   ],
   exports: [
     Material.MatButtonModule,
@@ -33,6 +36,9 @@ import * as Material from '@angular/material';
     Material.MatCheckboxModule,
     Material.MatSnackBarModule,
     Material.MatTableModule,
+    Material.MatIconModule,
+    Material.MatPaginatorModule,
+    Material.MatSortModule,
   ],
   declarations: []
 })
