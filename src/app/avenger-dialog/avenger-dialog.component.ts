@@ -27,13 +27,25 @@ export class AvengerDialogComponent implements OnInit {
     this.notificationService.success(':: Submitted Successfully!');
   }
 
+  /*
+  If the form is valid:
+    If there is no key in the form:
+      then insert avenger and the given values
+    else:
+      call updateAvenger function from the service & update form values
+      Reset the from, initialize the form, display success message & close form
+  */
   onSubmit() {
     if (this.service.form.valid) {
-      this.service.insertAvenger(this.service.form.value);
-      this.service.form.reset();
-      this.service.initializeFormGroup();
-      this.notificationService.success(':: Submitted Successfully!');
-      this.onClose();
+      if (!this.service.form.get('$key').value) {
+        this.service.insertAvenger(this.service.form.value);
+      } else {
+        this.service.updateAvenger(this.service.form.value);
+        this.service.form.reset();
+        this.service.initializeFormGroup();
+        this.notificationService.success(':: Submitted Successfully!');
+        this.onClose();
+      }
     }
   }
 

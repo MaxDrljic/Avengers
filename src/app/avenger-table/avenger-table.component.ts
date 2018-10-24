@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AvengerDialogComponent } from '../avenger-dialog/avenger-dialog.component';
 import { AvengerService } from '../shared/avenger.service';
 import { EventsService } from '../shared/events.service';
 
-import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { MatTableDataSource, MatSort, MatPaginator, MatDialog, MatDialogConfig } from '@angular/material';
 
 @Component({
   selector: 'app-avenger-table',
@@ -12,7 +13,8 @@ import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 export class AvengerTableComponent implements OnInit {
 
   constructor(private service: AvengerService,
-    private eventsService: EventsService) { }
+    private eventsService: EventsService,
+    private dialog: MatDialog) { }
 
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = ['name', 'description', 'eventName', 'eventDescription', 'actions'];
@@ -59,6 +61,17 @@ export class AvengerTableComponent implements OnInit {
   // Filters the word, removes whitespace and changes to lowercase
   applyFilter() {
     this.listData.filter = this.searchKey.trim().toLowerCase();
+  }
+
+  // Editing the form:
+  // Populate the form, open the dialog component and pass the configs
+  onEdit(row) {
+    this.service.populateForm(row);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '60%';
+    this.dialog.open(AvengerDialogComponent, dialogConfig);
   }
 
 }

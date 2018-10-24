@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import * as _ from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -69,5 +70,15 @@ export class AvengerService {
   // Identifies the Avenger by it's key and removes it
   deleteAvenger($key: string) {
     this.avengerList.remove($key);
+  }
+
+  /*
+    Populate the form with the selected avenger
+    Pass the values from the form and set them,
+    But using lodash, we omit values from the Firebase,
+    and only target the values that are actually in the form
+  */
+  populateForm(avenger) {
+    this.form.setValue(_.omit(avenger, 'eventName', 'eventDescription'));
   }
 }
