@@ -24,6 +24,7 @@ import { EventsService } from './shared/events.service';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AvengerDialogComponent } from './avenger-dialog/avenger-dialog.component';
 import { AvengerTableComponent } from './avenger-table/avenger-table.component';
+import { MatDialogRef } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,12 @@ import { AvengerTableComponent } from './avenger-table/avenger-table.component';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [AvengerService, EventsService],
+  providers: [AvengerService, EventsService, {
+    provide: MatDialogRef,
+    useValue: {
+      close: any => { }
+    }
+  }],
   bootstrap: [AppComponent],
   entryComponents: [AvengerDialogComponent]
 })
