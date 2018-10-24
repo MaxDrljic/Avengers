@@ -48,6 +48,6 @@ import { AvengerTableComponent } from './avenger-table/avenger-table.component';
   ],
   providers: [AvengerService, EventsService],
   bootstrap: [AppComponent],
-  // entryComponents: [AvengerDialogComponent]
+  entryComponents: [AvengerDialogComponent]
 })
 export class AppModule { }

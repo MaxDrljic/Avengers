@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material';
 import { AvengerDialogComponent } from '../avenger-dialog/avenger-dialog.component';
-import { filter } from 'rxjs/operators';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 
 @Component({
   selector: 'app-join-avengers',
@@ -10,48 +9,18 @@ import { filter } from 'rxjs/operators';
 })
 export class JoinAvengersComponent implements OnInit {
 
-  // Defining the reference to the dialog & it's component
-  // avengerDialogRef: MatDialogRef<AvengerDialogComponent>;
+  constructor(private dialog: MatDialog) { }
 
-  // Defining MatDialog service
-  constructor(/* private dialog: MatDialog */) { }
-
-  /* avengers = [
-    { name: 'Sample Avenger', description: 'Feel free to add a new one!' }
-  ];
-
-  // Class method which opens the dialog
-  // Also, data object should be defined inside the avengerDialogRef where I pass the name and the description
-  openAvengerDialog(avenger?) {
-    this.avengerDialogRef = this.dialog.open(AvengerDialogComponent, {
-      hasBackdrop: false,
-      disableClose: true,
-      autoFocus: true,
-      data: {
-        name: avenger ? avenger.name : '',
-        description: avenger ? avenger.description : ''
-      }
-    });
-
-    // Handling the observable by first filtering and then listening to changes
-    // If the avenger is clicked, the item is found by it's index which is assigned to the name property.
-    // If the index is negative 1, FINISH!!!
-    // Else, FINISH!!!
-    this.avengerDialogRef
-      .afterClosed()
-      .pipe(filter(name => name))
-      .subscribe(name => {
-        if (avenger) {
-          const index = this.avengers.findIndex(f => f.name === avenger.name);
-          if (index !== -1) {
-            this.avengers[index] = { name, description: avenger.description };
-          }
-        } else {
-          this.avengers.push({ name, description: '' });
-        }
-      });
-  } */
   ngOnInit() {
+  }
+
+  onCreate() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '60%';
+
+    this.dialog.open(AvengerDialogComponent, dialogConfig);
   }
 
 }
