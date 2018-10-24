@@ -17,11 +17,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { AvengerService } from './avenger.service';
+import { AvengerService } from './shared/avenger.service';
+import { EventsService } from './shared/events.service';
 
 // Routing
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AvengerDialogComponent } from './avenger-dialog/avenger-dialog.component';
+import { AvengerTableComponent } from './avenger-table/avenger-table.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { AvengerDialogComponent } from './avenger-dialog/avenger-dialog.componen
     FooterComponent,
     routingComponents,
     AvengerDialogComponent,
+    AvengerTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,8 +46,8 @@ import { AvengerDialogComponent } from './avenger-dialog/avenger-dialog.componen
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [AvengerService],
+  providers: [AvengerService, EventsService],
   bootstrap: [AppComponent],
-  entryComponents: [AvengerDialogComponent]
+  // entryComponents: [AvengerDialogComponent]
 })
 export class AppModule { }

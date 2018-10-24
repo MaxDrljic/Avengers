@@ -11,12 +11,12 @@ import { filter } from 'rxjs/operators';
 export class JoinAvengersComponent implements OnInit {
 
   // Defining the reference to the dialog & it's component
-  avengerDialogRef: MatDialogRef<AvengerDialogComponent>;
+  // avengerDialogRef: MatDialogRef<AvengerDialogComponent>;
 
   // Defining MatDialog service
-  constructor(private dialog: MatDialog) { }
+  constructor(/* private dialog: MatDialog */) { }
 
-  avengers = [
+  /* avengers = [
     { name: 'Sample Avenger', description: 'Feel free to add a new one!' }
   ];
 
@@ -50,7 +50,7 @@ export class JoinAvengersComponent implements OnInit {
           this.avengers.push({ name, description: '' });
         }
       });
-  }
+  } */
   ngOnInit() {
   }
 

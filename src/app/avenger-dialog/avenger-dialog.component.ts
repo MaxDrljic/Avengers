@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AvengerService } from '../avenger.service';
+import { AvengerService } from '../shared/avenger.service';
+import { EventsService } from '../shared/events.service';
+import { NotificationService } from '../shared/notification.service';
 
 @Component({
   selector: 'app-avenger-dialog',
@@ -9,13 +11,9 @@ import { AvengerService } from '../avenger.service';
 })
 export class AvengerDialogComponent implements OnInit {
 
-  constructor(private service: AvengerService) { }
-
-  events = [
-    { id: 3, value: 'Event 1' },
-    { id: 2, value: 'Event 2' },
-    { id: 3, value: 'Event 3' }
-  ];
+  constructor(private service: AvengerService,
+    private eventsService: EventsService,
+    private notificationService: NotificationService) { }
 
   ngOnInit() {
     this.service.getAvengers();
@@ -31,6 +29,7 @@ export class AvengerDialogComponent implements OnInit {
       this.service.insertAvenger(this.service.form.value);
       this.service.form.reset();
       this.service.initializeFormGroup();
+      this.notificationService.success(':: Submitted Successfully');
     }
   }
 

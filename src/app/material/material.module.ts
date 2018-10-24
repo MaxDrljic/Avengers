@@ -16,6 +16,8 @@ import * as Material from '@angular/material';
     Material.MatRadioModule,
     Material.MatSelectModule,
     Material.MatCheckboxModule,
+    Material.MatSnackBarModule,
+    Material.MatTableModule,
   ],
   exports: [
     Material.MatButtonModule,
@@ -29,6 +31,8 @@ import * as Material from '@angular/material';
     Material.MatRadioModule,
     Material.MatSelectModule,
     Material.MatCheckboxModule,
+    Material.MatSnackBarModule,
+    Material.MatTableModule,
   ],
   declarations: []
 })

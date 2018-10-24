@@ -4,9 +4,22 @@
 @import "~font-awesome/css/font-awesome.css";
 
 body {
+  margin: 0;
   background: url(assets/images/background1.jpg) no-repeat center fixed;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
 }
+
+/* SnackBar notifications */
+snack-bar-container.success {
+  background-color: #5cb85c;
+  color: #fff;
+}
+
+snack-bar-container.notification simple-snack-bar {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+

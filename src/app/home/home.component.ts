@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MarvelService } from '../marvel.service';
+import { MarvelService } from '../shared/marvel.service';
 
 @Component({
   selector: 'app-home',
