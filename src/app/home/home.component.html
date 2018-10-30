@@ -5,7 +5,7 @@
     <span class="fill-remaining-space"></span>
   </mat-toolbar>
   <br>
-  <button mat-raised-button (click)="onCreate()">
+  <button mat-raised-button color="primary" (click)="onCreate()">
     <mat-icon>add</mat-icon>Create
   </button>
 </div>
@@ -22,7 +22,9 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>FAVORITE</button>
+      <button mat-icon-button color="warn">
+        <mat-icon aria-label="icon-button with a heart icon">favorite</mat-icon>
+      </button>
       <button mat-button>REMOVE FROM FAVORITES</button>
     </mat-card-actions>
   </mat-card>
