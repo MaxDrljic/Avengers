@@ -11,6 +11,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 // Angular Material Stuff
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
 
 // Components
 import { AppComponent } from './app.component';
@@ -44,6 +45,7 @@ import { MatDialogRef } from '@angular/material';
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     MaterialModule,
+    LayoutModule,
     BrowserAnimationsModule,
     AppRoutingModule
   ],

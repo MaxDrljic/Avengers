@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AvengerDialogComponent } from '../avenger-dialog/avenger-dialog.component';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 import { MarvelService } from '../shared/marvel.service';
+import { AvengerService } from '../shared/avenger.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +11,9 @@ import { MarvelService } from '../shared/marvel.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private _marvelService: MarvelService) { }
+  constructor(private _marvelService: MarvelService,
+    private service: AvengerService,
+    private dialog: MatDialog) { }
 
   private heroes = [];
   private data = <any>[];
@@ -31,6 +36,15 @@ export class HomeComponent implements OnInit {
         }
         console.log(this.heroes);
       });
+  }
+
+  onCreate() {
+    this.service.initializeFormGroup();
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '60%';
+    this.dialog.open(AvengerDialogComponent, dialogConfig);
   }
 
 }

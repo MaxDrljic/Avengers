@@ -1,3 +1,15 @@
+<div class="container">
+  <mat-toolbar>
+    <span class="fill-remaining-space"></span>
+    <span>Join Avengers!</span>
+    <span class="fill-remaining-space"></span>
+  </mat-toolbar>
+  <br>
+  <button mat-raised-button (click)="onCreate()">
+    <mat-icon>add</mat-icon>Create
+  </button>
+</div>
+<br>
 <div class="container" *ngFor="let hero of heroes">
   <mat-card class="hero-card">
     <mat-card-header>
