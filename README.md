@@ -18,7 +18,7 @@ Avengers is an application created with Angular 6, Material Design & Bootstrap 4
 ## Content To Add / Fix
 
 * Sidebar - Fix
-    1. Add proper display for Avenger names
+    - Add proper display for Avenger names
 
 * Firebase authentication - To Add
 
@@ -28,6 +28,7 @@ Avengers is an application created with Angular 6, Material Design & Bootstrap 4
 2. Go into project
 3. Install npm dependencies(npm install)
 4. In src/environments/ folder, you can add your Firebase and Marvel instance or use the existing one. Instances in this project are made for testing purposes.
+5. To display Compodoc documentation, use compodoc -p src/tsconfig.app.json -s
 
 ## Usage
 
