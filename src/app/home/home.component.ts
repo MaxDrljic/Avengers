@@ -12,13 +12,32 @@ import { AvengerService } from '../shared/avenger.service';
 export class HomeComponent implements OnInit {
 
   private heroes = [];
-  private data = <any>[];
+  public icon = 'close';
+  public page = 1;
 
   constructor(private _marvelService: MarvelService,
     private service: AvengerService,
     private dialog: MatDialog) { }
 
-  public icon = 'close';
+  ngOnInit() {
+    /* First, grab the endpoint from the service,
+       Then, the subscribe is needed to listen to data,
+       After that, simply loop through data and display what is needed */
+    this._marvelService.grabHeroes()
+      .subscribe((res: any['data']) => {
+        console.log(res.data.results);
+        for (let i = 0; i < res.data.results.length; i++) {
+          if (res.data.results[i].description.length > 1) {
+            this.heroes.push({
+              name: res.data.results[i].name,
+              description: res.data.results[i].description,
+              image: res.data.results[i].thumbnail.path + '.' + res.data.results[i].thumbnail.extension,
+            });
+          }
+        }
+        console.log(this.heroes);
+      });
+  }
 
   public addFavorite() {
     if (this.icon === 'close') {
@@ -32,24 +51,10 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    /* First, grab the endpoint from the service,
-       Then, the subscribe is needed to listen to data,
-       After that, simply loop through data and display what is needed */
-    this._marvelService.grabHeroes()
-      .subscribe((res: any[]) => {
-        console.log(res.data.results);
-        for (let i = 0; i < res.data.results.length; i++) {
-          if (res.data.results[i].description.length > 1) {
-            this.heroes.push({
-              name: res.data.results[i].name,
-              description: res.data.results[i].description,
-              image: res.data.results[i].thumbnail.path + '.' + res.data.results[i].thumbnail.extension,
-            });
-          }
-        }
-        console.log(this.heroes);
-      });
+  onScroll() {
+    console.log('scrolled!');
+    this.page = this.page + 1;
+    this.ngOnInit();
   }
 
   onCreate() {

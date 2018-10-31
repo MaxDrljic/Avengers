@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { environment } from '../environments/environment';
 
 // Firebase
@@ -41,6 +42,7 @@ import { MatDialogRef } from '@angular/material';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    InfiniteScrollModule,
     ReactiveFormsModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

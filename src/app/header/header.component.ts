@@ -10,13 +10,15 @@ export class HeaderComponent implements OnInit {
 
   constructor(private avengerService: AvengerService) { }
 
-  avengers = <any>[];
 
   // <---------------------   ERROR NOTICE -------------------------->
 
   /* Displays avengers name in the sidebar,
      but the code breaks in the avenger-table.component or /avenger-table route
   */
+
+  // avengers: Array<[]>;
+
   ngOnInit() {
     this.avengerService.getAvengers();
     /* .subscribe(
