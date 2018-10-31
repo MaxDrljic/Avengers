@@ -1,13 +1,18 @@
 <div class="container">
-  <mat-toolbar>
-    <span class="fill-remaining-space"></span>
-    <span>Join Avengers!</span>
-    <span class="fill-remaining-space"></span>
-  </mat-toolbar>
-  <br>
-  <button mat-raised-button color="primary" (click)="onCreate()">
-    <mat-icon>add</mat-icon>Create
-  </button>
+  <mat-card class="main-card">
+    <mat-card-header>
+      <mat-card-title>Add Your Favorite Avengers</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="main-content">This is an application where you can manage Marvel heroes, enjoy!<br><br>
+        Newly added Avengers can be found on List Avengers page.</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="main-button" mat-raised-button color="primary" (click)="onCreate()">
+        <mat-icon>add</mat-icon>Create
+      </button>
+    </mat-card-actions>
+  </mat-card>
 </div>
 <br>
 <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="400" (scrolled)="onScroll()"

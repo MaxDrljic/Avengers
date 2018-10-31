@@ -51,8 +51,11 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  /* Function which enables infinite scroll
+     Calling ngOnInit() inside a function is not the best practice,
+     but for now it gets the job done...
+  */
   onScroll() {
-    console.log('scrolled!');
     this.page = this.page + 1;
     this.ngOnInit();
   }

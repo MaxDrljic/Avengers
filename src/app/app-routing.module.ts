@@ -6,7 +6,8 @@ import { AvengerTableComponent } from './avenger-table/avenger-table.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'avenger-table', component: AvengerTableComponent }
+  { path: 'avenger-table', component: AvengerTableComponent },
+  { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({
