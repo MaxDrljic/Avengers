@@ -79,6 +79,20 @@ padding-left: 40px;
   }
 }
 
+@media (max-width: 768px) {
+  .navbar-nav {
+    > a {
+      display: block;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+
+  .logo-nav {
+    visibility: hidden;
+  }
+}
+
 /* change transition animation to width when entire sidebar is toggled */
 #sidebar.collapse {
 -webkit-transition-timing-function: ease;
