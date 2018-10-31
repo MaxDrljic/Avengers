@@ -11,12 +11,26 @@ import { AvengerService } from '../shared/avenger.service';
 })
 export class HomeComponent implements OnInit {
 
+  private heroes = [];
+  private data = <any>[];
+
   constructor(private _marvelService: MarvelService,
     private service: AvengerService,
     private dialog: MatDialog) { }
 
-  private heroes = [];
-  private data = <any>[];
+  public icon = 'close';
+
+  public addFavorite() {
+    if (this.icon === 'close') {
+      this.icon = 'favorite';
+    }
+  }
+
+  public removeFavorite() {
+    if (this.icon === 'favorite') {
+      this.icon = 'close';
+    }
+  }
 
   ngOnInit() {
     /* First, grab the endpoint from the service,

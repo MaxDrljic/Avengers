@@ -22,10 +22,10 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-icon-button color="warn">
-        <mat-icon aria-label="icon-button with a heart icon">favorite</mat-icon>
+      <button mat-icon-button (click)="addFavorite()">
+        <mat-icon color="warn" aria-label="icon-button">{{icon}}</mat-icon>
       </button>
-      <button mat-button>REMOVE FROM FAVORITES</button>
+      <button mat-button (click)="removeFavorite()">REMOVE FROM FAVORITES</button>
     </mat-card-actions>
   </mat-card>
   <br />
