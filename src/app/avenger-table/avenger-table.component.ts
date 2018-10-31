@@ -13,7 +13,7 @@ import { NotificationService } from '../shared/notification.service';
 })
 export class AvengerTableComponent implements OnInit {
 
-  constructor(private service: AvengerService,
+  constructor(public service: AvengerService,
     private eventsService: EventsService,
     private dialog: MatDialog,
     private notificationService: NotificationService) { }
@@ -76,6 +76,7 @@ export class AvengerTableComponent implements OnInit {
     this.dialog.open(AvengerDialogComponent, dialogConfig);
   }
 
+  // Delete Avenger
   onDelete($key) {
     if (confirm('Are you sure about deleting this Avenger?')) {
       this.service.deleteAvenger($key);

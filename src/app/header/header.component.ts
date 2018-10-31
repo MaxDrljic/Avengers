@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
+import { AvengerService } from '../shared/avenger.service';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +8,27 @@ import { Observable } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
 
-  isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
+  constructor(private avengerService: AvengerService) { }
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  avengers = <any>[];
 
+  // <---------------------   ERROR NOTICE -------------------------->
+
+  /* Displays avengers name in the sidebar,
+     but the code breaks in the avenger-table.component or /avenger-table route
+  */
   ngOnInit() {
+    this.avengerService.getAvengers();
+    /* .subscribe(
+      list => {
+        this.avengers = list.map(item => {
+          return {
+            $key: item.key,
+            ...item.payload.val()
+          };
+        });
+        console.log(this.avengers);
+      }); */
   }
 
 }
