@@ -1,0 +1,1063 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>avengers documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">avengers documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AvengerTableComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/avenger-table/avenger-table.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-avenger-table</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./avenger-table.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./avenger-table.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#displayedColumns">displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#listData">listData</a>
+                            </li>
+                            <li>
+                                <a href="#paginator">paginator</a>
+                            </li>
+                            <li>
+                                <a href="#searchKey">searchKey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#service">service</a>
+                            </li>
+                            <li>
+                                <a href="#sort">sort</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#applyFilter">applyFilter</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onDelete">onDelete</a>
+                            </li>
+                            <li>
+                                <a href="#onEdit">onEdit</a>
+                            </li>
+                            <li>
+                                <a href="#onSearchClear">onSearchClear</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(service: <a href="../injectables/AvengerService.html">AvengerService</a>, eventsService: <a href="../injectables/EventsService.html">EventsService</a>, dialog: MatDialog, notificationService: <a href="../injectables/NotificationService.html">NotificationService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/avenger-table/avenger-table.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/AvengerService.html" target="_self" >AvengerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>eventsService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/EventsService.html" target="_self" >EventsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>notificationService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/NotificationService.html" target="_self" >NotificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="applyFilter"></a>
+                        <span class="name">
+                            <b>
+                            applyFilter
+                            </b>
+                            <a href="#applyFilter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>applyFilter()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/avenger-table/avenger-table.component.ts:64</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/avenger-table/avenger-table.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onDelete"></a>
+                        <span class="name">
+                            <b>
+                            onDelete
+                            </b>
+                            <a href="#onDelete"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onDelete($key)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/avenger-table/avenger-table.component.ts:80</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>$key</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onEdit"></a>
+                        <span class="name">
+                            <b>
+                            onEdit
+                            </b>
+                            <a href="#onEdit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onEdit(row)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/avenger-table/avenger-table.component.ts:70</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>row</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onSearchClear"></a>
+                        <span class="name">
+                            <b>
+                            onSearchClear
+                            </b>
+                            <a href="#onSearchClear"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onSearchClear()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/avenger-table/avenger-table.component.ts:58</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayedColumns"></a>
+                        <span class="name">
+                            <b>
+                            displayedColumns
+                            </b>
+                            <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>displayedColumns:     <code>string[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&#x27;name&#x27;, &#x27;description&#x27;, &#x27;eventName&#x27;, &#x27;eventDescription&#x27;, &#x27;actions&#x27;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/avenger-table/avenger-table.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listData"></a>
+                        <span class="name">
+                            <b>
+                            listData
+                            </b>
+                            <a href="#listData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>listData:     <code>MatTableDataSource&lt;any&gt;</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatTableDataSource&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/avenger-table/avenger-table.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="paginator"></a>
+                        <span class="name">
+                            <b>
+                            paginator
+                            </b>
+                            <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>paginator:     <code>MatPaginator</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatPaginator</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(MatPaginator)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/avenger-table/avenger-table.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchKey"></a>
+                        <span class="name">
+                            <b>
+                            searchKey
+                            </b>
+                            <a href="#searchKey"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>searchKey:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/avenger-table/avenger-table.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="service"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            service
+                            </b>
+                            <a href="#service"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>service:     <code><a href="../injectables/AvengerService.html" target="_self" >AvengerService</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../injectables/AvengerService.html" target="_self" >AvengerService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/avenger-table/avenger-table.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sort"></a>
+                        <span class="name">
+                            <b>
+                            sort
+                            </b>
+                            <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>sort:     <code>MatSort</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatSort</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(MatSort)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/avenger-table/avenger-table.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { AvengerDialogComponent } from &#x27;../avenger-dialog/avenger-dialog.component&#x27;;
+import { AvengerService } from &#x27;../shared/avenger.service&#x27;;
+import { EventsService } from &#x27;../shared/events.service&#x27;;
+
+import { MatTableDataSource, MatSort, MatPaginator, MatDialog, MatDialogConfig } from &#x27;@angular/material&#x27;;
+import { NotificationService } from &#x27;../shared/notification.service&#x27;;
+
+@Component({
+  selector: &#x27;app-avenger-table&#x27;,
+  templateUrl: &#x27;./avenger-table.component.html&#x27;,
+  styleUrls: [&#x27;./avenger-table.component.scss&#x27;]
+})
+export class AvengerTableComponent implements OnInit {
+
+  constructor(public service: AvengerService,
+    private eventsService: EventsService,
+    private dialog: MatDialog,
+    private notificationService: NotificationService) { }
+
+  listData: MatTableDataSource&lt;any&gt;;
+  displayedColumns: string[] &#x3D; [&#x27;name&#x27;, &#x27;description&#x27;, &#x27;eventName&#x27;, &#x27;eventDescription&#x27;, &#x27;actions&#x27;];
+  /* Decorators which are using MatSort &amp; MatPaginator,
+    and implementing &#x27;sort&#x27; and &#x27;paginator&#x27;
+    on listData, shown on ngInit below! */
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  searchKey: string;
+
+  // When the component is initialized, retrieve key, all avengers, event name and push it to array
+  ngOnInit() {
+    this.service.getAvengers().subscribe(
+      list &#x3D;&gt; {
+        const array &#x3D; list.map(item &#x3D;&gt; {
+          const eventName &#x3D; this.eventsService.getEventName(item.payload.val()[&#x27;event&#x27;]);
+          const eventDescription &#x3D; this.eventsService.getEventDescription(item.payload.val()[&#x27;event&#x27;]);
+          return {
+            $key: item.key,
+            eventName,
+            eventDescription,
+            ...item.payload.val()
+          };
+        });
+        this.listData &#x3D; new MatTableDataSource(array);
+        this.listData.sort &#x3D; this.sort;
+        this.listData.paginator &#x3D; this.paginator;
+        // Restricts the search functionality only for the form, not the Firebase
+        this.listData.filterPredicate &#x3D; (data, filter) &#x3D;&gt; {
+          return this.displayedColumns.some(element &#x3D;&gt; {
+            return element !&#x3D;&#x3D; &#x27;actions&#x27; &amp;&amp; data[element].toLowerCase().indexOf(filter) !&#x3D;&#x3D; -1;
+          });
+        };
+      }
+    );
+  }
+
+  // Clears the search &amp; applies the filter
+  onSearchClear() {
+    this.searchKey &#x3D; &#x27;&#x27;;
+    this.applyFilter();
+  }
+
+  // Filters the word, removes whitespace and changes to lowercase
+  applyFilter() {
+    this.listData.filter &#x3D; this.searchKey.trim().toLowerCase();
+  }
+
+  // Editing the form:
+  // Populate the form, open the dialog component and pass the configs
+  onEdit(row) {
+    this.service.populateForm(row);
+    const dialogConfig &#x3D; new MatDialogConfig();
+    dialogConfig.disableClose &#x3D; true;
+    dialogConfig.autoFocus &#x3D; true;
+    dialogConfig.width &#x3D; &#x27;60%&#x27;;
+    this.dialog.open(AvengerDialogComponent, dialogConfig);
+  }
+
+  // Delete Avenger
+  onDelete($key) {
+    if (confirm(&#x27;Are you sure about deleting this Avenger?&#x27;)) {
+      this.service.deleteAvenger($key);
+      this.notificationService.warn(&#x27;! Avenger Removed&#x27;);
+    }
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- Search Field --&gt;
+&lt;div class&#x3D;&quot;search-div&quot;&gt;
+  &lt;mat-form-field class&#x3D;&quot;search-form-field&quot; floatLabel&#x3D;&quot;never&quot;&gt;
+    &lt;input matInput [(ngModel)]&#x3D;&quot;searchKey&quot; placeholder&#x3D;&quot;Search&quot; autocomplete&#x3D;&quot;off&quot; (keyup)&#x3D;&quot;applyFilter()&quot;&gt;
+    &lt;button mat-button matSuffix mat-icon-button aria-label&#x3D;&quot;Clear&quot; *ngIf&#x3D;&quot;searchKey&quot; (click)&#x3D;&quot;onSearchClear()&quot;&gt;
+      &lt;mat-icon&gt;close&lt;/mat-icon&gt;
+    &lt;/button&gt;
+  &lt;/mat-form-field&gt;
+&lt;/div&gt;
+&lt;!-- Data Table --&gt;
+&lt;div class&#x3D;&quot;mat-elevation-z8 table&quot;&gt;
+  &lt;mat-table [dataSource]&#x3D;&quot;listData&quot; matSort&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;name&quot;&gt;
+      &lt;mat-header-cell *matHeaderCellDef mat-sort-header&gt;Full Name&lt;/mat-header-cell&gt;
+      &lt;mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{element.name}}&lt;/mat-cell&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;description&quot;&gt;
+      &lt;mat-header-cell *matHeaderCellDef mat-sort-header&gt;Description&lt;/mat-header-cell&gt;
+      &lt;mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{element.description}}&lt;/mat-cell&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;eventName&quot;&gt;
+      &lt;mat-header-cell *matHeaderCellDef mat-sort-header&gt;Event&lt;/mat-header-cell&gt;
+      &lt;mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{element.eventName}}&lt;/mat-cell&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;eventDescription&quot;&gt;
+      &lt;mat-header-cell *matHeaderCellDef mat-sort-header&gt;Event Description&lt;/mat-header-cell&gt;
+      &lt;mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;{{element.eventDescription}}&lt;/mat-cell&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;actions&quot;&gt;
+      &lt;mat-header-cell *matHeaderCellDef&gt;Actions&lt;/mat-header-cell&gt;
+      &lt;mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt;
+        &lt;button mat-icon-button (click)&#x3D;&quot;onEdit(row)&quot;&gt;
+          &lt;mat-icon&gt;launch&lt;/mat-icon&gt;
+        &lt;/button&gt;
+        &lt;button mat-icon-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;onDelete(row.$key)&quot;&gt;
+          &lt;mat-icon&gt;delete_outline&lt;/mat-icon&gt;
+        &lt;/button&gt;
+      &lt;/mat-cell&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;loading&quot;&gt;
+      &lt;mat-footer-cell *matFooterCellDef colspan&#x3D;&quot;6&quot;&gt;
+        Loading Data...
+      &lt;/mat-footer-cell&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;noData&quot;&gt;
+      &lt;mat-footer-cell *matFooterCellDef colspan&#x3D;&quot;6&quot;&gt;
+        No data to show.
+      &lt;/mat-footer-cell&gt;
+    &lt;/ng-container&gt;
+    &lt;mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/mat-header-row&gt;
+    &lt;mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/mat-row&gt;
+    &lt;mat-footer-row *matFooterRowDef&#x3D;&quot;[&#x27;loading&#x27;]&quot; [ngClass]&#x3D;&quot;{&#x27;hide&#x27;:listData!&#x3D;null}&quot;&gt;&lt;/mat-footer-row&gt;
+    &lt;mat-footer-row *matFooterRowDef&#x3D;&quot;[&#x27;noData&#x27;]&quot; [ngClass]&#x3D;&quot;{&#x27;hide&#x27;:!(listData!&#x3D;null &amp;&amp; listData.data.length&#x3D;&#x3D;0)}&quot;&gt;&lt;/mat-footer-row&gt;
+  &lt;/mat-table&gt;
+  &lt;mat-paginator [pageSizeOptions]&#x3D;&quot;[5]&quot; [pageSize]&#x3D;&quot;5&quot;&gt;&lt;/mat-paginator&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./avenger-table.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* Hide Loading Info */
+
+.hide {
+  display: none;
+}
+
+.table {
+  margin-left: 15px;
+  width: 80%;  
+}
+
+mat-footer-row mat-footer-cell {
+  justify-content: center;
+  font-style: italic;
+}
+
+/* Filter Controls */
+.search-div {
+  margin: 4px;
+}
+
+.search-form-field {
+  width: 30%;
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.search-form-field div.mat-form-field-underline {
+  display: none;
+}
+
+.search-form-field div.mat-form-field-infix {
+  border-top: 0px;
+}
+
+.search-form-field div.mat-form-field-wrapper {
+  padding-bottom: 0px;
+}
+
+.search-form-field div.mat-form-field-suffix button {
+  height: 32px;
+  width: 32px;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- Search Field --><div class="search-div">  <mat-form-field class="search-form-field" floatLabel="never">    <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">    <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">      <mat-icon>close</mat-icon>    </button>  </mat-form-field></div><!-- Data Table --><div class="mat-elevation-z8 table">  <mat-table [dataSource]="listData" matSort>    <ng-container matColumnDef="name">      <mat-header-cell *matHeaderCellDef mat-sort-header>Full Name</mat-header-cell>      <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>    </ng-container>    <ng-container matColumnDef="description">      <mat-header-cell *matHeaderCellDef mat-sort-header>Description</mat-header-cell>      <mat-cell *matCellDef="let element">{{element.description}}</mat-cell>    </ng-container>    <ng-container matColumnDef="eventName">      <mat-header-cell *matHeaderCellDef mat-sort-header>Event</mat-header-cell>      <mat-cell *matCellDef="let element">{{element.eventName}}</mat-cell>    </ng-container>    <ng-container matColumnDef="eventDescription">      <mat-header-cell *matHeaderCellDef mat-sort-header>Event Description</mat-header-cell>      <mat-cell *matCellDef="let element">{{element.eventDescription}}</mat-cell>    </ng-container>    <ng-container matColumnDef="actions">      <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>      <mat-cell *matCellDef="let row">        <button mat-icon-button (click)="onEdit(row)">          <mat-icon>launch</mat-icon>        </button>        <button mat-icon-button color="warn" (click)="onDelete(row.$key)">          <mat-icon>delete_outline</mat-icon>        </button>      </mat-cell>    </ng-container>    <ng-container matColumnDef="loading">      <mat-footer-cell *matFooterCellDef colspan="6">        Loading Data...      </mat-footer-cell>    </ng-container>    <ng-container matColumnDef="noData">      <mat-footer-cell *matFooterCellDef colspan="6">        No data to show.      </mat-footer-cell>    </ng-container>    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>    <mat-footer-row *matFooterRowDef="[\'loading\']" [ngClass]="{\'hide\':listData!=null}"></mat-footer-row>    <mat-footer-row *matFooterRowDef="[\'noData\']" [ngClass]="{\'hide\':!(listData!=null && listData.data.length==0)}"></mat-footer-row>  </mat-table>  <mat-paginator [pageSizeOptions]="[5]" [pageSize]="5"></mat-paginator></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AvengerDialogComponent', 'selector': 'app-avenger-dialog'},{'name': 'AvengerTableComponent', 'selector': 'app-avenger-table'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AvengerTableComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AvengerTableComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,5 +1,36 @@
 # Avengers
 
+## Project Description
+
+Avengers is an application created with Angular 6, Material Design & Bootstrap 4. It uses Marvel API to grab heroes, contains CRUD functionality for creating your own list of Avengers and displays them in Material Design Table.
+
+## Table Of Contents
+
+* Marvel API
+* CRUD functionality
+* Firebase for storing Avengers
+* Routing system
+* Favorites system
+* Infinite scroll
+* Material Design & Bootstrap 4 elements
+* Responsive UI
+
+## Content To Add / Fix
+
+* Sidebar - Fix
+    1. Add proper display for Avenger names
+
+* Firebase authentication - To Add
+
+## Installation
+
+1. Clone this repository
+2. Go into project
+3. Install npm dependencies(npm install)
+4. In src/environments/ folder, you can add your Firebase and Marvel instance or use the existing one. Instances in this project are made for testing purposes.
+
+## Usage
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
 
 ## Development server
